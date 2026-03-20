@@ -78,7 +78,15 @@ if submitted:
         # These variables are expected to be in the global scope from previous executed cells
         # if 'scaler' not in globals() or 'kmeans_model' not in globals():
         #     st.error("Error: Scaler o modelo K-Means no encontrados en el entorno.")
-        #     st.stop()
+        #     st.stop() 
+        
+        with open('kmeans_model_bigfive_gm.pkl', 'rb') as f:
+        kmeans_model = pickle.load(f)
+
+        #cargamos el standarizador
+        with open('scaler_st_bigfive_gm.pkl', 'rb') as f:
+        scaler = pickle.load(f)
+     
  
         # Standardize the user's scores
         user_scores_scaled = scaler.transform(user_scores)
