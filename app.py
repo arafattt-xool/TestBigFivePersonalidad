@@ -91,6 +91,8 @@ opn_questions = {
     'O9': 'Paso tiempo reflexionando sobre las cosas.',
     'O10': 'Estoy lleno(a) de ideas.'
 }
+
+lista_preguntas = [ext_questions, neu_questions, agr_questions, con_questions, opn_questions]
  
 # Initialize an empty dictionary to store user responses in session state
 if 'user_responses' not in st.session_state:
