@@ -92,6 +92,13 @@ opn_questions = {
     'O10': 'Estoy lleno(a) de ideas.'
 }
 
+lista_clusters = [
+    "El grupo 0 está compuesto por personalidades muy introvertidas, bastante nerviosas, amigables y creativas, pero ni descuidadas ni organizadas.",
+    "El grupo 1 está formado por personas muy extrovertidas, amigables, organizadas y curiosas, además de ser las más seguras de sí mismas.",
+    "El grupo 2 puede describirse como compuesto por introvertidos con un nivel medio de confianza, que son bastante amigables, organizados y bastante creativos.",
+    "El grupo 3 está formado por extrovertidos con un nivel medio de nerviosismo, que son realmente amigables y creativos, pero ni descuidados ni organizados."
+]
+
 lista_preguntas = [ext_questions, neu_questions, agr_questions, con_questions, opn_questions]
  
 # Initialize an empty dictionary to store user responses in session state
@@ -166,6 +173,7 @@ if submitted:
         # Predict the cluster
         predicted_cluster = kmeans_model.predict(user_scores_scaled)[0]
         st.write(f"### Perteneces al Cluster: {predicted_cluster}")
+        st.write(f"{lista_clusters[predicted_cluster]}")
  
         # Display cluster description/mean values
         st.write("#### Valores promedio de los rasgos para tu Cluster:")
