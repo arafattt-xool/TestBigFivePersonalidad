@@ -175,13 +175,6 @@ if submitted:
         st.write(f"### Perteneces al Cluster: {predicted_cluster}")
         st.write(f"{lista_clusters[predicted_cluster]}")
  
-        # Display cluster description/mean values
-        st.write("#### Valores promedio de los rasgos para tu Cluster:")
-        if 'cluster_means' in globals():
-            st.dataframe(cluster_means.loc[[predicted_cluster]])
-        else:
-            st.write("No hay una descripción detallada disponible para este cluster en este momento. La variable 'cluster_means' no fue encontrada.")
- 
     except Exception as e:
         st.error(f"Error al procesar las puntuaciones o el modelo: {e}")
       
