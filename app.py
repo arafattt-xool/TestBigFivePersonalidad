@@ -167,9 +167,6 @@ if submitted:
         user_scores_scaled = scaler.transform(user_scores)
         user_scores_scaled_df = pd.DataFrame(user_scores_scaled, columns=user_scores.columns)
  
-        st.write("### Puntuaciones escaladas (estandarizadas):")
-        st.dataframe(user_scores_scaled_df)
- 
         # Predict the cluster
         predicted_cluster = kmeans_model.predict(user_scores_scaled)[0]
         st.write(f"### Perteneces al Cluster: {predicted_cluster}")
